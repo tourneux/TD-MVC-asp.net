@@ -1,0 +1,29 @@
+﻿@using Nwd.BackOffice.Model
+@model IEnumerable<Album>
+
+<div class="jumbotron">
+    <table class="table table-hover">
+        <tr>
+            <th>
+                @Html.DisplayNameFor( model => model.Title )
+            </th>
+        </tr>
+
+        @foreach( Album al in Model )
+        {
+            <tr>
+                <td>
+                    @Html.ActionLink( @al.Title, "Details", "Album", new { id = @al.Id }, null )
+                </td>
+                <td>
+                   @Html.ActionLink( "Editer", "Edit", "Album", new { id = @al.Id }, null ) 
+                </td>
+                <td>
+                    @Html.ActionLink( "Supprimer", "Delete", "Album", new { id = @al.Id }, null )
+                </td>
+
+            </tr>
+        }
+    </table>
+    <div>@Html.ActionLink( "Créer", "Create", "Album" )</div>
+</div>

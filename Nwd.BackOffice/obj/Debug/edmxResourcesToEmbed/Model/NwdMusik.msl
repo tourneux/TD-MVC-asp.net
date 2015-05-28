@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="NwdMusikModelStoreContainer" CdmEntityContainer="NwdMusikEntities">
+    <EntitySetMapping Name="Albums">
+      <EntityTypeMapping TypeName="NwdMusikModel.Album">
+        <MappingFragment StoreEntitySet="Albums">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Duration" ColumnName="Duration" />
+          <ScalarProperty Name="ReleaseDate" ColumnName="ReleaseDate" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="CoverImagePath" ColumnName="CoverImagePath" />
+          <ScalarProperty Name="Artist_Id" ColumnName="Artist_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Artists">
+      <EntityTypeMapping TypeName="NwdMusikModel.Artist">
+        <MappingFragment StoreEntitySet="Artists">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Biography" ColumnName="Biography" />
+          <ScalarProperty Name="Song_Id" ColumnName="Song_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Songs">
+      <EntityTypeMapping TypeName="NwdMusikModel.Song">
+        <MappingFragment StoreEntitySet="Songs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Composed" ColumnName="Composed" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tracks">
+      <EntityTypeMapping TypeName="NwdMusikModel.Track">
+        <MappingFragment StoreEntitySet="Tracks">
+          <ScalarProperty Name="AlbumId" ColumnName="AlbumId" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="Duration" ColumnName="Duration" />
+          <ScalarProperty Name="FileRelativePath" ColumnName="FileRelativePath" />
+          <ScalarProperty Name="Song_Id" ColumnName="Song_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

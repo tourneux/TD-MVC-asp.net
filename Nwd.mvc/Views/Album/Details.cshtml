@@ -1,0 +1,73 @@
+﻿@using Nwd.BackOffice.Model
+@model Album
+@{
+    ViewBag.Title = "Album";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Album</h4>
+        <hr />
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "col-md-2" })
+            <div class="col-md-10">
+                @Html.DisplayNameFor(model => model.Title)  
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Duration, htmlAttributes: new { @class = "col-md-2" })
+            <div class="col-md-10">
+                @Html.DisplayNameFor( model => model.Duration )
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ReleaseDate, htmlAttributes: new { @class = "col-md-2" })
+            <div class="col-md-10">
+                @Html.DisplayNameFor( model => model.ReleaseDate )
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor( model => model.Type, htmlAttributes: new { @class = "col-md-2" } )
+            <div class="col-md-10">
+                @Html.DisplayNameFor( model => model.Type)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor( model => model.CoverImagePath, htmlAttributes: new { @class = "col-md-2" } )
+            <div class="col-md-10">
+                @Html.DisplayNameFor( model => model.CoverImagePath)
+            </div>
+        </div>
+        <fieldset>
+            <div class="form-group">
+                @Html.LabelFor( model => model.Artist, "Artist", htmlAttributes: new { @class = "col-md-2" } )
+                <div class="col-md-10">
+                    @Html.DisplayNameFor( model => model.Artist )
+                </div>
+            </div>
+        </fieldset>
+        <div class="form-group">
+            @Html.LabelFor( model => model.Tracks, "Tracks", htmlAttributes: new { @class = "col-md-2" } )
+            <div class="col-md-10">
+                @Html.DisplayNameFor( model => model.Tracks )
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink( "Retour à la liste", "AdminAlbums", "Album" )
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

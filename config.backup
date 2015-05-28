@@ -1,0 +1,14 @@
+[core]
+	repositoryformatversion = 0
+	filemode = false
+	bare = true
+	symlinks = false
+	ignorecase = true
+	hideDotFiles = dotGitOnly
+	sharedrepository = 2
+[receive]
+	denyNonFastforwards = true
+[remote "TD"]
+	url = https://github.com/tourneux/TD-MVC-asp.net.git
+	fetch = +refs/heads/*:refs/remotes/TD/*
+	puttykeyfile = f6:12:22:2c:7b:c2:dd:5f:5b:73:9a:3f:36:6d:67:92

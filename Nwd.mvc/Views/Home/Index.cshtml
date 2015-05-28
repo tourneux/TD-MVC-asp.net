@@ -1,0 +1,31 @@
+﻿@using Nwd.BackOffice.Model
+@model IEnumerable<Album>
+
+<div class="jumbotron">
+    <div class="panel-heading">
+        <strong>Liste des Albums</strong>
+    </div>
+    <table class="table table-hover">
+        <tr>
+            <th>
+                @Html.DisplayNameFor( model => model.Title )
+            </th>
+            <th>
+                @Html.DisplayNameFor( model => model.Artist )
+            </th>
+        </tr>
+
+        @foreach( Album al in Model )
+        {
+            <tr>
+                <td>
+                    @Html.ActionLink( @al.Title, "Details", "Album", new { id = @al.Id }, null )
+                    @Html.DisplayFor( modelal => al.Title )
+                </td>
+                <td>
+                    @Html.DisplayFor( modelal => al.Artist.Name )
+                </td>
+            </tr>
+        }
+    </table>
+</div>
